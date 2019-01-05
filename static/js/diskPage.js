@@ -117,7 +117,7 @@ function onPlay(){
     if (playing == false){
         document.getElementById('myplay').play();
         playing = true;
-        document.getElementById('playbutton').innerHTML = 'play-arrow'
+        document.getElementById('playbutton').innerHTML = 'play_arrow'
     } else {
         document.getElementById('myplay').pause();
         playing = fase;

@@ -19,7 +19,7 @@ def home():
         tag = File(musiclist[i])
         if('TIT2' in tag.keys()):
             musicJ[i]['Tags'] = {'TIT2':tag['TIT2'].text[0], 'TPE1':tag['TPE1'.text[0]]}
-            
+
     return render_template("home.html", musicJ=musicJ, musicJson=json.dumps(musicJ))
 
 @app.route("/coverImage")
@@ -43,9 +43,11 @@ def sounds():
 def sec2minstring(sec):
     mi = sec / 60
     mi = str(mi).split('.')
-    seci = str(int(float('0.' + mi[1]) * 60.0))
+    seci = int(float('0.' + mi[1]) * 60.0)
     if seci < 10:
         seci = '0' + str(0)
+    else:
+        seci = str(seci)
     
     return mi[0] + ':' + seci
 
