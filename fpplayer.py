@@ -18,9 +18,9 @@ def home():
     for i in range(len(musicJ)):
         tag = File(musiclist[i])
         if('TIT2' in tag.keys()):
-            musicJ[i]['Tags'] = {'TIT2':tag['TIT2'].text[0], 'TPE1':tag['TPE1'.text[0]]}
+            musicJ[i]['Tags'] = {'TIT2':tag['TIT2'].text[0], 'TPE1':tag['TPE1'].text[0]}
 
-    return render_template("home.html", musicJ=musicJ, musicJson=json.dumps(musicJ))
+    return render_template("home.html", musicJ=musicJ)
 
 @app.route("/coverImage")
 def coverImage():
